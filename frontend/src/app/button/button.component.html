@@ -1,0 +1,38 @@
+<!-- Full-width Task 1 Description -->
+<div class="task-description">
+    <h2>🧩 Task 1: Colour Interaction</h2>
+
+    <h3>🎯 Task 1.1 (Simple)</h3>
+    <p>Enter a colour name or hex code. Click the button to apply the colour to it.</p>
+
+    <h3>🎯 Task 1.2 (Complex)</h3>
+    <p>Start typing a colour name or hex code. As soon as it's valid, the button updates its background without needing
+        a click.</p>
+</div>
+
+<!-- Side-by-side Panels for 1.1 and 1.2 -->
+<div class="task-panels">
+    <!-- Task 1.1 Panel -->
+    <div class="panel">
+        <h3>Task 1.1 – Click to Change</h3>
+        <p><em>Type a colour and click the button to apply it.</em></p>
+        <div class="input-group">
+            <input type="text" [(ngModel)]="clickInputColor" placeholder="e.g. red or #ff0000" />
+            <button (click)="applyClickColor()" [style.background-color]="clickButtonColor">
+                Apply Colour
+            </button>
+        </div>
+    </div>
+
+    <!-- Task 1.2 Panel -->
+    <div class="panel">
+        <h3>Task 1.2 – Live Update</h3>
+        <p><em>Type a colour and see the button change instantly.</em></p>
+        <div class="input-group">
+            <input type="text" [(ngModel)]="liveInputColor" placeholder="e.g. blue or #00ff00" />
+            <button [style.background-color]="liveInputColor">
+                Live Colour
+            </button>
+        </div>
+    </div>
+</div>
