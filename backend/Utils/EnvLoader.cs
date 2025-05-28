@@ -1,6 +1,6 @@
 using DotNetEnv;
 
-namespace MyBackendApp.Utils
+namespace backend.Utils
 {
     public static class EnvLoader
     {
