@@ -1,3 +1,7 @@
+body {
+    font-family: 'Fira Code', monospace;
+}
+
 .admin-container {
     max-width: 600px;
     margin: 40px auto;
@@ -5,6 +9,7 @@
     background-color: #f0f4f8;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 100px;
 }
 
 .admin-container h2 {
@@ -26,4 +31,117 @@
     font-weight: bold;
     margin-bottom: 20px;
     text-align: center;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 500px;
+    max-width: 90%;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+}
+
+select {
+    width: 50%;
+    padding: 10px;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.add-user-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    font-family: 'Fira Code', monospace;
+}
+
+.add-user-button:hover {
+    background-color: #0056b3;
+}
+
+.modal-actions button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+    font-family: 'Fira Code', monospace;
+}
+
+.modal-actions button:last-child {
+    background-color: #6c757d;
+    /* gray for Close */
+    margin-right: 0;
+}
+
+.modal-actions button:hover {
+    background-color: #0056b3;
+}
+
+.modal-actions button:last-child:hover {
+    background-color: #5a6268;
+}
+
+.logout-button.top-right {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    z-index: 1000;
+}
+
+.logout-button.top-right:hover {
+    background-color: #b02a37;
 }

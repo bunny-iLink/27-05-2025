@@ -1,5 +1,11 @@
+<button class="logout-button top-right" (click)="logout()">Logout</button>
+
 <div class="admin-container">
-    <h2>Admin Dashboard</h2>
+    <div class="admin-header" *ngIf="addUserButton">
+        <h2>Admin Dashboard</h2>
+        <button class="add-user-button" (click)="openModal()"><strong>+ Add New User</strong></button>
+    </div>
+
 
     <div *ngIf="error" class="error-message">{{ error }}</div>
 
@@ -8,5 +14,41 @@
         <p><strong>Name:</strong> {{ user?.name }}</p>
         <p><strong>Email:</strong> {{ user?.email }}</p>
         <p><strong>Role:</strong> {{ user?.role }}</p>
+    </div>
+</div>
+
+<!-- Existing content -->
+
+<!-- Modal -->
+<div *ngIf="showModal" class="modal-overlay">
+    <div class="modal">
+        <h3>Register New User</h3>
+
+        <div class="modal-body">
+            <label>Username:</label>
+            <input [(ngModel)]="newUser.username" type="text" />
+
+            <label>Email:</label>
+            <input [(ngModel)]="newUser.email" type="email" />
+
+            <label>Name:</label>
+            <input [(ngModel)]="newUser.name" type="text" />
+
+            <label>Password:</label>
+            <input [(ngModel)]="newUser.password" type="password" />
+
+            <label>Role:</label>
+            <select [(ngModel)]="newUser.role">
+                <option *ngFor="let r of roles" [value]="r">{{ r }}</option>
+            </select>
+        </div>
+
+        <div class="modal-actions">
+            <button (click)="submitUser()">Submit</button>
+            <button (click)="closeModal()">Close</button>
+        </div>
+
+        <div *ngIf="submitError" class="error-message">{{ submitError }}</div>
+        <div *ngIf="submitSuccess" class="success-message">{{ submitSuccess }}</div>
     </div>
 </div>

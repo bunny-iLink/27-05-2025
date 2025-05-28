@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { jwtDecode } from 'jwt-decode';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-faculty',
@@ -14,7 +15,7 @@ export class FacultyComponent implements OnInit {
   user: any = null;
   error: string | null = null;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
     const token = localStorage.getItem('token');
@@ -52,5 +53,13 @@ export class FacultyComponent implements OnInit {
     } catch (e) {
       this.error = 'Invalid token format.';
     }
+  }
+
+  logout(): void {
+    localStorage.removeItem('token');
+    this.user = null;
+    this.error = 'You are not logged in.';
+    alert("You have been logged out.");
+    this.router.navigate(['management/login']);
   }
 }

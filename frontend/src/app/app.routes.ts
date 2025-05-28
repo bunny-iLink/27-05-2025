@@ -6,10 +6,10 @@ export const routes: Routes = [
 
     {path: "management/login", loadComponent: () => import('./management/login/login.component').then(m => m.LoginComponent)},
     {path: "management/admin", loadComponent: () => import('./management/admin/admin.component').then(m => m.AdminComponent)},
-    {path: "management/principal", loadComponent: () => import('./management/admin/admin.component').then(m => m.AdminComponent)},
-    {path: "management/faculty", loadComponent: () => import('./management/admin/admin.component').then(m => m.AdminComponent)},
-    {path: "management/student", loadComponent: () => import('./management/admin/admin.component').then(m => m.AdminComponent)},
-    
+    {path: "management/principal", loadComponent: () => import('./management/principal/principal.component').then(m => m.PrincipalComponent)},
+    {path: "management/faculty", loadComponent: () => import('./management/faculty/faculty.component').then(m => m.FacultyComponent)},
+    {path: "management/student", loadComponent: () => import('./management/student/student.component').then(m => m.StudentComponent)},
+
     {path: "state", loadComponent: () => import('./state/state.component').then(m => m.StateComponent)},
     
 ];

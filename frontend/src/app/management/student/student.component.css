@@ -27,3 +27,22 @@
     margin-bottom: 20px;
     text-align: center;
 }
+
+.logout-button.top-right {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    z-index: 1000;
+}
+
+.logout-button.top-right:hover {
+    background-color: #b02a37;
+}
