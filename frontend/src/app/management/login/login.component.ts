@@ -49,8 +49,8 @@ export class LoginComponent {
             this.router.navigate(['/management/admin']);
           } else if (res.role === 'principal') {
             this.router.navigate(['management/principal']);
-          } else if (res.role === 'teacher') {
-            this.router.navigate(['management/teacher']);
+          } else if (res.role === 'faculty') {
+            this.router.navigate(['management/faculty']);
           } else if (res.role === 'student') {
             this.router.navigate(['management/student']);
           }
