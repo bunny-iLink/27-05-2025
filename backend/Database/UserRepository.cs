@@ -36,5 +36,15 @@ namespace backend.Database
             return user;
         }
 
+        public IEnumerable<User> GetAllUsers()
+        {
+            using var connection = _db.GetConnection();
+            connection.Open();
+
+            var query = "SELECT * FROM users";
+            var users = connection.Query<User>(query);
+            return users;
+        }
+
     }
 }

@@ -109,6 +109,20 @@ namespace MyBackendApp.Controllers
             return Ok(user);
         }
 
+        [HttpGet("all")]
+        public IActionResult GetAllUsers()
+        {
+            try
+            {
+                var users = _repository.GetAllUsers();
+                return Ok(users);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { error = ex.Message });
+            }
+        }
+
         public class UsernameRequest
         {
             public string Username { get; set; } = string.Empty;

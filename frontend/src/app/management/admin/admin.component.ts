@@ -62,6 +62,8 @@ export class AdminComponent implements OnInit {
         this.submitError = err.error?.message || 'User registration failed.';
       }
     });
+
+    this.fetchAllUsers();
   }
 
   user: any = null;
@@ -69,6 +71,25 @@ export class AdminComponent implements OnInit {
   addUserButton: boolean = true;
 
   constructor(private http: HttpClient, private router: Router) { }
+
+  allUsers: any[] = [];
+
+  fetchAllUsers(): void {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+
+    this.http.get<any[]>('http://localhost:5028/api/user/all', { headers }).subscribe({
+      next: (response) => {
+        this.allUsers = response.map(user => {
+          const { id, password, ...rest } = user;
+          return rest;
+        });
+      },
+      error: (err) => {
+        console.error('Failed to load users:', err);
+      }
+    });
+  }
+
 
   ngOnInit(): void {
     const token = localStorage.getItem('token');
@@ -78,6 +99,8 @@ export class AdminComponent implements OnInit {
       this.error = 'You are not logged in.';
       return;
     }
+
+    this.fetchAllUsers();
 
     try {
       const decoded: any = jwtDecode(token);
@@ -110,13 +133,13 @@ export class AdminComponent implements OnInit {
   }
 
   logout(): void {
-  localStorage.removeItem('token');
-  this.addUserButton = false;
-  this.user = null;
-  this.error = 'You are not logged in.';
-  alert("You have been logged out.");
-  this.router.navigate(['management/login']);
-}
+    localStorage.removeItem('token');
+    this.addUserButton = false;
+    this.user = null;
+    this.error = 'You are not logged in.';
+    alert("You have been logged out.");
+    this.router.navigate(['management/login']);
+  }
 
 
 }
