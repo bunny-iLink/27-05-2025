@@ -48,11 +48,11 @@ export class LoginComponent {
           if (res.role === 'admin') {
             this.router.navigate(['/management/admin']);
           } else if (res.role === 'principal') {
-            this.router.navigate(['/principal']);
+            this.router.navigate(['management/principal']);
           } else if (res.role === 'teacher') {
-            this.router.navigate(['/teacher']);
+            this.router.navigate(['management/teacher']);
           } else if (res.role === 'student') {
-            this.router.navigate(['/student']);
+            this.router.navigate(['management/student']);
           }
           else {
             this.router.navigate(['/']);

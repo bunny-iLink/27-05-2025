@@ -89,12 +89,37 @@ namespace MyBackendApp.Controllers
 
             return Ok(new { token = tokenString, role = user.Role, name = user.Name });
         }
-    }
 
-    // Define LoginRequest here or in Models folder
-    public class LoginRequest
-    {
-        public string? Username { get; set; }
-        public string? Password { get; set; }
+        [HttpPost("profile")]
+        public IActionResult GetUser([FromBody] UsernameRequest request)
+        {
+            if (string.IsNullOrWhiteSpace(request.Username))
+            {
+                return BadRequest(new { message = "Username is required." });
+            }
+
+            var user = _repository.GetUserByUsername(request.Username);
+            if (user == null)
+            {
+                return NotFound(new { message = "User not found." });
+            }
+
+            user.Password = null;
+
+            return Ok(user);
+        }
+
+        public class UsernameRequest
+        {
+            public string Username { get; set; } = string.Empty;
+        }
+
+
+        // Define LoginRequest here or in Models folder
+        public class LoginRequest
+        {
+            public string? Username { get; set; }
+            public string? Password { get; set; }
+        }
     }
 }

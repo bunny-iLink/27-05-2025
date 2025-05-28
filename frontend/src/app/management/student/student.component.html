@@ -1,1 +1,12 @@
-<p>student works!</p>
+<div class="student-container">
+    <h2>Student Dashboard</h2>
+
+    <div *ngIf="error" class="error-message">{{ error }}</div>
+
+    <div *ngIf="user" class="user-details">
+        <p><strong>Username:</strong> {{ user?.username }}</p>
+        <p><strong>Name:</strong> {{ user?.name }}</p>
+        <p><strong>Email:</strong> {{ user?.email }}</p>
+        <p><strong>Role:</strong> {{ user?.role }}</p>
+    </div>
+</div>

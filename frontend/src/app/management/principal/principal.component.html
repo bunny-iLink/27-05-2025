@@ -1,1 +1,12 @@
-<p>principal works!</p>
+<div class="principal-container">
+    <h2>Principal Dashboard</h2>
+
+    <div *ngIf="error" class="error-message">{{ error }}</div>
+
+    <div *ngIf="user" class="user-details">
+        <p><strong>Username:</strong> {{ user?.username }}</p>
+        <p><strong>Name:</strong> {{ user?.name }}</p>
+        <p><strong>Email:</strong> {{ user?.email }}</p>
+        <p><strong>Role:</strong> {{ user?.role }}</p>
+    </div>
+</div>
