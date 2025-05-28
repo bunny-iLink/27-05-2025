@@ -1,0 +1,56 @@
+.task-description {
+    margin-bottom: 25px;
+    padding: 20px;
+    background-color: #eef4fa;
+    border-left: 5px solid #007bff;
+    border-radius: 6px;
+}
+
+.task-description h2 {
+    margin-top: 0;
+}
+
+.task-panels {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.panel {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+textarea {
+    width: 97%;
+    height: 100px;
+    font-size: 16px;
+    padding: 10px;
+    resize: vertical;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: fit-content;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #999;
+    cursor: not-allowed;
+}
