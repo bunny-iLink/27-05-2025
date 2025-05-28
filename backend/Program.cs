@@ -15,7 +15,8 @@ builder.Configuration.AddEnvironmentVariables();
 builder.Services.AddSingleton<DbConnector>();
 builder.Services.AddSingleton<UserRepository>();
 
-var jwtKey = Environment.GetEnvironmentVariable("Jwt__Key");
+var jwtKey = Environment.GetEnvironmentVariable("Jwt__Key")
+    ?? throw new InvalidOperationException("JWT secret key (Jwt__Key) not found in environment variables.");
 var jwtIssuer = Environment.GetEnvironmentVariable("Jwt__Issuer");
 var jwtAudience = Environment.GetEnvironmentVariable("Jwt__Audience");
 
