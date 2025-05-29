@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
 export class StudentComponent implements OnInit {
   user: any = null;
   error: string | null = null;
-  addUserButton: boolean = false;
+  addUserButton: boolean = true;
 
   constructor(private http: HttpClient, private router: Router) { }
 

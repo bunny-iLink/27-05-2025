@@ -142,3 +142,90 @@ This project is built with a robust and scalable full-stack architecture:
 💡 This stack was chosen to combine modern frontend interactivity with a powerful and secure backend and a relational database that's widely supported in production environments.
 ```
 
+---
+
+## How to setup?
+
+### Clone the repository
+
+```
+git clone https://github.com/bunny-iLink/27-05-2025.git
+```
+
+---
+
+### Frontend Setup
+
+#### Step 1: Go to frontend directory
+```
+cd frontend
+```
+
+#### Step 2: Install dependencies
+```
+npm install
+```
+
+#### Step 3: Start the frontend developement server
+```
+ng serve
+```
+
+#### Access the frontend
+- Access the frontend at http://localhost:4200 (Can differ in some cases) 
+
+---
+
+### Backend Setup
+
+#### Step 1: Go to backend directory
+```
+cd backend
+```
+
+#### Step 2: Install dependencies
+```
+dotnet restore
+```
+
+#### Step 3: Create .env in /backend
+- Create a .env file in backend directory. The contents should be as follows:
+
+```
+DB_HOST=localhost
+DB_PORT=3306
+DB_NAME=your_db_name
+DB_USER=your_username
+DB_PASS=your_db_password
+
+Jwt__Key=this_is_a_very_long_secret_key_for_jwt_authentication
+Jwt__Issuer=backend
+Jwt__Audience=backend
+```
+
+#### Step 4: Create a database and table of following schema
+```
+CREATE TABLE `users` (
+  `username` varchar(50) NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `email` varchar(50) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
+  `name` varchar(60) DEFAULT NULL,
+  `role` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+```
+
+#### Step 5: Ensure proper permissions
+- Make sure the user with username in .env has proper permissions
+
+#### Step 6: Run the backend
+```
+dotnet run
+```
+
+⚠️ Make sure to change the backend URL in admin, login, faculty, principal and student component
+---
+
+
+

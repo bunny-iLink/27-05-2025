@@ -56,14 +56,13 @@ export class AdminComponent implements OnInit {
     ).subscribe({
       next: () => {
         this.submitSuccess = 'User registered successfully.';
+        this.fetchAllUsers();
         this.closeModal();
       },
       error: (err) => {
         this.submitError = err.error?.message || 'User registration failed.';
       }
     });
-
-    this.fetchAllUsers();
   }
 
   user: any = null;
@@ -140,6 +139,4 @@ export class AdminComponent implements OnInit {
     alert("You have been logged out.");
     this.router.navigate(['management/login']);
   }
-
-
 }
