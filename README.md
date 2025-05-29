@@ -12,10 +12,35 @@ Ready to dive in? Let’s go! 🚀
 
 I’ve built three core features, and you can access them through the following interactive endpoints:
 
-👨‍💻 Task	💡 Description	🔗 Try It
-1.1 & 1.2	Colour-changing button with simple & live update modes	/button
-2	Role-based Student Management System	/management/login
-3	State Change Detection & Save Logic	/state
+<h2>🚀 Live Endpoints</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Description</th>
+      <th>Endpoint</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>🎨 <strong>Task 1.1 &amp; 1.2</strong></td>
+      <td>Colour-changing button</td>
+      <td><code>/button</code></td>
+    </tr>
+    <tr>
+      <td>🏫 <strong>Task 2</strong></td>
+      <td>Role-based student management system</td>
+      <td><code>/management/login</code></td>
+    </tr>
+    <tr>
+      <td>💾 <strong>Task 3</strong></td>
+      <td>Smart state save logic</td>
+      <td><code>/state</code></td>
+    </tr>
+  </tbody>
+</table>
+
 
 ---
 
