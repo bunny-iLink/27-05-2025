@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
 export class StudentComponent implements OnInit {
   user: any = null;
   error: string | null = null;
+  addUserButton: boolean = false;
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -21,6 +22,7 @@ export class StudentComponent implements OnInit {
     const token = localStorage.getItem('token');
 
     if (!token) {
+      this.addUserButton = false;
       this.error = 'You are not logged in.';
       return;
     }
@@ -59,6 +61,7 @@ export class StudentComponent implements OnInit {
     localStorage.removeItem('token');
     this.user = null;
     this.error = 'You are not logged in.';
+    this.addUserButton = false;
     alert("You have been logged out.");
     this.router.navigate(['management/login']);
   }

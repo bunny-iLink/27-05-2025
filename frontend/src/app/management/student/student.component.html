@@ -1,4 +1,4 @@
-<button class="logout-button top-right" (click)="logout()">Logout</button>
+<button *ngIf="addUserButton" class="logout-button top-right" (click)="logout()">Logout</button>
 
 <div class="student-container">
     <h2>Student Dashboard</h2>
