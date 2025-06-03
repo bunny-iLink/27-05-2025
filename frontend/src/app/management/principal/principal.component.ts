@@ -46,6 +46,8 @@ export class PrincipalComponent implements OnInit {
       ).subscribe({
         next: (response) => {
           this.user = response;
+          console.log(this.user);
+          
         },
         error: (err) => {
           this.error = err.error?.message || 'Failed to fetch user profile.';

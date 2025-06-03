@@ -225,7 +225,7 @@ dotnet run
 ```
 
 #### ⚠️ Make sure to change the backend URL in admin, login, faculty, principal and student component
----
+
 
 
 
